@@ -9,7 +9,7 @@ init('.app', {
     'https://media.istockphoto.com/id/1199738695/photo/choice-between-keep-working-and-retirement.jpg?s=612x612&w=0&k=20&c=q9Va6K7F3QbEQfbnwegV_y0rV01yDiC6pddfImf6pZI='
   ],
   nav: true,
-  dots: true,
+  // dots: true,
   loop: true,
   animation: 500,
   auto: 2000

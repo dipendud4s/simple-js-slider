@@ -51,16 +51,6 @@ export default function init(ele, config) {
   const main = document.querySelector(ele);
   main.style.position = 'relative'
 
-  const left = document.createElement('div');
-  left.classList.add('leftNav')
-  left.innerText = '<'
-  left.onclick = () => slide(active - 1)
-  const right = document.createElement('div');
-  right.onclick = () => slide(active + 1)
-  right.classList.add('rightNav')
-  right.innerText = '>'
-
-
   container = document.createElement('div');
   container.classList.add('jsSlider')
   const imageArray = config.images;
@@ -73,8 +63,20 @@ export default function init(ele, config) {
   });
   main.appendChild(container)
 
-  main.appendChild(left)
-  main.appendChild(right)
+  if (config.nav) {
+    const left = document.createElement('div');
+    left.classList.add('leftNav')
+    left.innerText = '<'
+    left.onclick = () => slide(active - 1)
+    const right = document.createElement('div');
+    right.onclick = () => slide(active + 1)
+    right.classList.add('rightNav')
+    right.innerText = '>'
+    main.appendChild(left)
+    main.appendChild(right)
+  }
+
+
   if (config.auto) {
     autoSlide(config.auto)
   }
